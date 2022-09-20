@@ -1,38 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+   /* background: linear-gradient(135deg, rgba(195,34,159,1), rgba(45,46,253,1));   */
+   /* background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%); */
+  background: linear-gradient( 135deg, #FEC163 10%, #DE4313 100%);  
+  font-size: 1rem;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('./illustrations/vector-bg.svg') no-repeat;
+  background-size: cover;
+  opacity: 0.03;
+  z-index: -10;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1); 
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+  color: white;
+  width: 100%;
+  padding: 2.18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
+}
+
+.container {
+  padding: 1rem;
+}
+
+.list-container {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width: 75rem;
+  height: 75vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.msgs-list {
+  list-style: none;
+  padding: 1rem;
+}
+
+.current-member-msg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.6rem;
+}
+
+.msg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.6rem;
+}
+
+.current-msg-content {
+  align-items: flex-end;
+}
+
+.msg-content {
+  display: inline-block;
+}
+
+.username {
+  display: block;
+  color: #e9ecef;
+  font-size: 0.875rem;
+  padding-bottom: 0.313rem;
+}
+
+.current-msg-content > .username {
+  text-align: right;
+}
+
+.current-msg-color {
+  max-width: 100%;
+  display: inline-block;
+  font-size: 1.25rem;
+  border-radius: 0.313rem;
+  padding: 0.7rem;
+  word-break: break-all;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.msg-color {
+  max-width: 100%;
+  display: inline-block;
+  font-size: 1.25rem;
+  color: white;
+  border-radius: 0.313rem;
+  padding: 0.7rem;
+  word-break: break-all; 
+  color: black;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 1rem 3.5rem;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 0.313rem;
+  width: 100%;
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+  word-break: break-all;
+  transition: background 0.3s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8.6px);
+  -webkit-backdrop-filter: blur(8.6px);
+}
+
+::placeholder {
+  color: #ced4da;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); 
+  padding: 1rem;
+  width: 7rem;
+  border: none;
+  border-radius: 0.313rem;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
